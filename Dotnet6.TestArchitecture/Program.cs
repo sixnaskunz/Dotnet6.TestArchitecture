@@ -8,6 +8,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Declaration of Options Pattern
+// Ref1: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-6.0#bind-hierarchical-configuration
+// Ref2: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-6.0#named-options-support-using-iconfigurenamedoptions
 builder.Services.Configure<PatternOptions>(builder.Configuration.GetSection(PatternOptions.OptionsPattern));
 builder.Services.Configure<LoggingOptions>(builder.Configuration.GetSection(LoggingOptions.Logging));
 
