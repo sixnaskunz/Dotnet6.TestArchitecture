@@ -9,8 +9,6 @@ builder.Services.AddSwaggerGen();
 
 // Declaration of Options Pattern
 builder.Services.Configure<PatternOptions>(builder.Configuration.GetSection(PatternOptions.OptionsPattern));
-builder.Services.Configure<PatternOptions>(PatternOptions.OptionsPattern, builder.Configuration.GetSection("OptionsPattern:ObjectField"));
-
 builder.Services.Configure<LoggingOptions>(builder.Configuration.GetSection(LoggingOptions.Logging));
 
 var app = builder.Build();
