@@ -4,15 +4,17 @@
     {
         public const string Logging = "Logging";
 
+        
         public LogLevel? LogLevel { get; set; }
     }
 
     public class LogLevel
     {
-        [JsonPropertyName("Default")]
         public string? Default { get; set; }
 
-        [JsonPropertyName("Microsoft.AspNetCore")]
-        public string? MicrosoftAspNetCore { get; set; }
+        /// <summary>
+        /// Ref: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging/?view=aspnetcore-6.0#configure-logging
+        /// </summary>
+        public string? Microsoft { get; set; }
     }
 }
