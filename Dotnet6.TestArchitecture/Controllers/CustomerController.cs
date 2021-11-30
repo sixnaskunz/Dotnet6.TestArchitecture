@@ -7,17 +7,18 @@ namespace Dotnet6.TestArchitecture.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
+        private readonly ICustomerService _service;
+
+        public CustomerController(ICustomerService service)
+        {
+            _service = service; 
+        }
+
         // GET: /<CustomerController>
         [HttpGet]
         public IEnumerable<Customer> Get()
         {
-            Random random = new();
-            return new List<Customer>
-            {
-                new Customer { Id = Guid.NewGuid(), FirstName = "Warune", LastName = "Pondsuraparb", Age = random.Next(0, 100) },
-                new Customer { Id = Guid.NewGuid(), FirstName = "SixnaskUnz", LastName = "Zenate", Age = random.Next(0, 100) },
-                new Customer { Id = Guid.NewGuid(), FirstName = "Plasmic", LastName = "Zenate", Age = random.Next(0, 100) },
-            };
+            return _service.GetAllCustomer();
         }
     }
 }

@@ -13,6 +13,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<PatternOptions>(builder.Configuration.GetSection(PatternOptions.OptionsPattern));
 builder.Services.Configure<LoggingOptions>(builder.Configuration.GetSection(LoggingOptions.Logging));
 
+// Dependencies Injection
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
